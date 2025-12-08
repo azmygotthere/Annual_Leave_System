@@ -1,0 +1,50 @@
+{
+    "123": {
+        "name": "jo",
+        "annual_leave": 18
+    },
+    "121": {
+        "name": "ji",
+        "annual_leave": 14
+    },
+    "312": {
+        "name": "ja",
+        "annual_leave": 18
+    },
+    "111": {
+        "name": "jo",
+        "annual_leave": 11
+    },
+    "222": {
+        "name": "ji",
+        "annual_leave": 6
+    },
+    "333": {
+        "name": "ja",
+        "annual_leave": 2
+    },
+    "131": {
+        "name": "la",
+        "annual_leave": 1
+    },
+    "001": {
+        "name": "jo",
+        "annual_leave": 12
+    },
+    "002": {
+        "name": "ju",
+        "annual_leave": 20
+    },
+    "003": {
+        "name": "ja",
+        "annual_leave": 20
+    },
+    "004": {
+        "name": "ja",
+        "annual_leave": 20
+    },
+    "ji": {
+        "name": "ji",
+        "annual_leave": 20
+    }
+}
