@@ -1,11 +1,40 @@
 from flask import Flask, render_template_string, request, redirect, url_for
 import json
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
 import os
 
 app = Flask(__name__)
 
 DATA_FILE = "employees.json"
 employees = {}
+
+# Use Render's DATABASE_URL
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db = SQLAlchemy(app)
+
+@app.route("/testdb")
+def testdb():
+    try:
+        # Run a simple query
+        result = db.session.execute("SELECT 1").scalar()
+        if result == 1:
+            return "✅ Connected to PostgreSQL!"
+        else:
+            return "⚠️ Connection failed."
+    except Exception as e:
+        return f"❌ Error: {str(e)}"
+
+@app.route("/")
+def home():
+    return "Leave Management System with PostgreSQL 🚀"
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
+
 
 # Load data from file
 def load_data():
